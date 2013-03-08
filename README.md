@@ -7,7 +7,7 @@ and it's not according to the Promise/A spec, but the execution, idea, and event
 - Promise resolution scope control
 
 ### Promise "and-thenning"
-```
+```JavaScript
 var promise = Promises.create();
 
 promise
@@ -23,7 +23,7 @@ promise is resolved, each callback supplied will be executed in the order in whi
             passed to the next function in the callback stack.
 
 ### Promise Chain
-```
+```JavaScript
 Promises.create([
     someFunction,
     anotherFunction,
@@ -36,7 +36,7 @@ A promise chain creates a single promise from a collection of many sync/async me
 is that a dependency chain can be created, regardless of a callback's returning value and sync/async status.
 The below example shows this in action
 
-```
+```JavaScript
 Promises.create([
     function() {
         return "Starting!";
@@ -51,7 +51,7 @@ Promises.create([
         return "I should execute after ~2 seconds!";
     }
 ])
-``
+```
 
 Above there's two sync callbacks that return strings and one pointless async callback which returns its promise.
 Under the hood the sync methods are really just Promises that resolve immediately with their returning values.
