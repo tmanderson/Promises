@@ -64,7 +64,7 @@ var Promises;
         }
         ChainablePromise.prototype.resolved = function (data) {
             var next = this.chain.shift(), current = next ? next(data) : null;
-            if(!current) {
+            if(!this.chain.length && !current) {
                 return this.resolve(data);
             }
             if(current.then) {

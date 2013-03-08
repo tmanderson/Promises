@@ -60,7 +60,7 @@ module Promises {
         //  Then allows the continuous chaining of callbacks for this particular
         //  promise.
         //  ### Arguments
-        //  - callback: 
+        //  - callback:
         then( callback: func, scope: obj = this ) {
             this.callbacks.push( function() { callback.apply( scope, arguments ); } );
             if( this.success ) return this.resolve( this.successResponse, this );
@@ -87,7 +87,7 @@ module Promises {
                 current = next ? next( data ) : null;
 
             //  If the chain is empty, resolve this promise
-            if( !current ) return this.resolve( data );
+            if( !this.chain.length && !current ) return this.resolve( data );
 
             //  If the method is a promise
             if( current.then ) {
