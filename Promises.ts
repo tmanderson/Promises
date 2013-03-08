@@ -90,7 +90,7 @@ module Promises {
             if( !this.chain.length && !current ) return this.resolve( data );
 
             //  If the method is a promise
-            if( current.then ) {
+            if( current && current.then ) {
                 //  Wait for the resolution before continuing
                 current.then( this.resolved, this );
             }
