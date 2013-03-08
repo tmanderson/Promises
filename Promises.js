@@ -67,7 +67,7 @@ var Promises;
             if(!this.chain.length && !current) {
                 return this.resolve(data);
             }
-            if(current.then) {
+            if(current && current.then) {
                 current.then(this.resolved, this);
             } else {
                 this.resolved(current);
