@@ -1,6 +1,6 @@
 # PROMISES
 A lightweight alternative to the many promise libraries out there. There's nothing really new here
-and it's not according to the Promise/A spec, but the execution, idea, and event flow is the same.
+and it's not according to the Promise/A spec -- though the execution, idea, and event flow is the same.
 
 - Written in and compiled by TypeScript
 - Small size
